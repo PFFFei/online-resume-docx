@@ -1,0 +1,209 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+  
+{% block title %} 创建简历 {% endblock %}
+
+{% block content %}
+<script src="{% static 'static/js/jquery-2.2.3.js' %}"></script>
+<script src="{% static 'static/js/resume-form.js' %}"></script>
+<link href="{% static 'static/css/resume-form.css' %}" rel="stylesheet">
+
+
+<div style="height:40px;"></div>
+<div class="assessment-container">
+   <div class="row">
+       <div class="col-md-6 col-md-offset-2 form-box">
+           <form role="form" method="post" class="registration-form" action="">
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>个人信息</h3>
+                           <p>
+                               请填写您的个人信息
+                           </p>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="row">
+                           <div class="form-group col-md-12 col-sm-12">
+                               <input type="text" name="name" class="form-control" placeholder="姓名" id="name" required>
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="age" placeholder="年龄" class="form-control" id="age" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="experience" placeholder="实习经验" class="form-control" id="experience" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="phone_no" placeholder="手机号" class="form-control" id="phone_no" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="email" placeholder="邮箱" class="form-email form-control" id="email" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="address" placeholder="现住城市" class="form-email form-control" id="address" required>
+                       </div>
+                       <button type="button" class="btn btn-next">下一步</button>
+                   </div>
+               </fieldset>
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>求职意向</h3>
+                           <p>
+                               请填写您的求职意向
+                           </p>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="form-group">
+                           <input type="text" name="purpose" placeholder="从事职业" class="form-control" id="purpose" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="salary" placeholder="期望薪资" class="form-control" id="salary" required>
+                       </div>
+                       <button type="button" class="btn btn-previous">上一步</button>
+                       <button type="button" class="btn btn-next">下一步</button>
+                   </div>
+               </fieldset>
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>证书</h3>
+                           <p>
+                               请填写您的证书
+                           </p>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="form-group">
+                           <input type="text" name="skill" placeholder="证书名称" class="form-control" id="skill" required>
+                       </div>
+                       <button type="button" class="btn btn-previous">上一步</button>
+                       <button type="button" class="btn btn-next">下一步</button>
+                   </div>
+               </fieldset>
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>实习经历</h3>
+                           <p>
+                               请填写您的实习经历
+                           </p>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="form-group">
+                           <input type="text" name="company_name" placeholder="公司名称" class="form-control" id="company_name" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="job_title" placeholder="实习岗位" class="form-control" id="job_title" required>
+                       </div>
+                       <div class="form-group">
+                           <div class="form-group col-md-6 col-sm-6">
+                              <input type="date" name="job_start_date" class="form-control" placeholder="实习开始日期" id="job_start_date" value="0000-00" required>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
+                              <input type="date" name="job_end_date" class="form-control" placeholder="实习结束日期" id="job_end_date" required>
+                            </div>
+                       </div>
+                       <div class="form-group">
+                           <textarea name="job_description" class="form-control" placeholder="实习描述" id="job_description" required>
+                           </textarea>
+                       </div>
+                       <button type="button" class="btn btn-previous">上一步</button>
+                       <button type="button" class="btn btn-next">下一步</button>
+                   </div>
+               </fieldset>
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>教育经历</h3>
+                           <p>
+                               请填写您的教育经历
+                           </p>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="form-group">
+                           <input type="text" name="institute_name" placeholder="机构名称" class="form-control" id="institute_name" required>
+                       </div>
+                       <div class="form-group">
+                           <div class="form-group col-md-6 col-sm-6">
+                              <input type="date" name="education_start_date" class="form-control" placeholder="开始日期" id="education_start_date" required>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
+                              <input type="date" name="education_end_date" class="form-control" placeholder="结束日期" id="education_end_date" required>
+                            </div>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="subject" placeholder="所学专业" class="form-control" id="subject" required>
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="academic" placeholder="学历学位" class="form-control" id="academic" required>
+                       </div>
+                       <button type="button" class="btn btn-previous">上一步</button>
+                       <button type="button" class="btn btn-next">下一步</button>
+                   </div>
+               </fieldset>
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>校园经历</h3>
+                           <p>
+                               请填写您的校园经历
+                           </p>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="form-group">
+                           所学课程：<textarea name="school_subject" class="form-control" placeholder="所学课程" id="school_subject" required>
+                           </textarea>
+                       </div>
+                       <div class="form-group">
+                           校园经历：<textarea name="school_job" class="form-control" placeholder="校园经历" id="school_job" required>
+                           </textarea>
+                       </div>
+                       <button type="button" class="btn btn-previous">上一步</button>
+                       <button type="button" class="btn btn-next">下一步</button>
+                   </div>
+               </fieldset>
+               <fieldset>
+                   <div class="form-top">
+                       <div class="form-top-left">
+                           <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true" required></i></span>自我评价</h3>
+                       </div>
+                   </div>
+                   <div class="form-bottom">
+                       <div class="form-group">
+                           <textarea name="aboutme" class="form-control" placeholder="自我描述" id="aboutme" required>
+                           </textarea>
+                       </div>
+
+                       {% csrf_token %}
+                       <button type="button" class="btn btn-previous">上一步</button>
+                       <button type="submit" class="btn">提交</button>
+                   </div>
+               </fieldset>
+           </form>
+       </div>
+   </div>
+</div>
+
+<!-- 设置时间为当前系统时间 -->
+<script>
+    $(document).ready(function () {
+        var time = new Date();
+        var day = ("0" + time.getDate()).slice(-2);
+        var month = ("0" + (time.getMonth() + 1)).slice(-2);
+        var today = time.getFullYear() + "-" + (month) + "-" + (day);
+        $('#education_start_date').val(today);
+        $('#education_end_date').val(today);
+        $('#job_start_date').val(today);
+        $('#job_end_date').val(today);
+    });
+</script>
+
+
+{% endblock %}
